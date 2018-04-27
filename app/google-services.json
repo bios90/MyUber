@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "15243459801-v26o6tbb6ob7rnm57agbjh5ldlgj5631.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dimfcompany.myuber",
+            "certificate_hash": "568334fecc7db09139a0ae822c8fb60505b6cd4c"
+          }
+        },
+        {
           "client_id": "15243459801-47v6aniejo334aufb7r651eveh4edcvl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

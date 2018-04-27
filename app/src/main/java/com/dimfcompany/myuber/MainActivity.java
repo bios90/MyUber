@@ -17,6 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.dimfcompany.myuber.Model.User;
 import com.google.android.gms.common.images.WebImage;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                                             .setFontAttrId(R.attr.fontPath)
                                             .build());
         setContentView(R.layout.activity_main);
+
 
         auth=FirebaseAuth.getInstance();
         db= FirebaseDatabase.getInstance();
@@ -207,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult)
                     {
+
                         User user = new User();
                         user.setEmail(edtEmail.getText().toString());
                         user.setPassword(edtPassword.getText().toString());
@@ -238,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Snackbar.make(rootLayout,"Register Completed",Snackbar.LENGTH_SHORT).show();
+                        Snackbar.make(rootLayout,"Register not Completed",Snackbar.LENGTH_SHORT).show();
                         return;
                     }
                 });
