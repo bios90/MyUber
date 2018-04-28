@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment
-    android:id="@+id/map"
 
+<RelativeLayout
     android:name="com.google.android.gms.maps.SupportMapFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/layoutPanel"
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <EditText
+            android:id="@+id/edtPlace"
+
+            android:layout_margin="10dp"
+            android:text="Enter PickUP Location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        
+        <Button
+            android:id="@+id/btnGo"
+
+            android:text="GO"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        
+    </LinearLayout>
+
+
+<fragment
+    android:id="@+id/map"
+
+    android:layout_below="@+id/layoutPanel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.dimfcompany.myuber.Welcome">
@@ -44,7 +78,7 @@
                 <Button
                     android:id="@+id/btn_find_user"
 
-                    android:text="FindUser ß"
+                    android:text="Find User"
                     android:layout_weight="7"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content" />
@@ -55,3 +89,4 @@
 
     </RelativeLayout>
 </fragment>
+</RelativeLayout>

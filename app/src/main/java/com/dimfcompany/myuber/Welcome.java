@@ -22,6 +22,8 @@ import android.app.Fragment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.animation.LinearInterpolator;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.firebase.geofire.GeoFire;
@@ -38,10 +40,14 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.List;
 
 public class Welcome extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener,LocationListener {
@@ -67,6 +73,21 @@ public class Welcome extends FragmentActivity implements OnMapReadyCallback,
 
     MaterialAnimatedSwitch location_switch;
     SupportMapFragment mapFragment;
+
+    //car Animation
+    List<LatLng> polyLinesList;
+    Marker pickuplocationMarker;
+    float v;
+    double lat,lng;
+    Handler handler;
+    LatLng startPosition,endPosition,currentPosition;
+    int index,next;
+    Button btnGo;
+    EditText edtPlace;
+    String destination;
+    PolylineOptions polylineOptions,blackPolyOptions;
+    Polyline grayPolyline,blackPolyline;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
